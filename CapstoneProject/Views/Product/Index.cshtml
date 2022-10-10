@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CapstoneProject.Models.Product>
+
+
+<div class="container d-flex flex-wrap">
+    @foreach (var item in Model)
+    {
+    <div class="card" style="width: 18rem;">
+            <a href="@Url.Action("ProductDetails","Product",new { productId = item.id })">
+                <img class="card-img-top" src="/src/images/product_@(item.id).png" width="286" height="286">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">@item.productName</h5>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.productPrice)</p>             
+                @using (Html.BeginForm("AddToCart", "cart", FormMethod.Post))
+                {                   
+                    @Html.Hidden("quantity", 1, new { @class = "control-label", @value = "1" })
+
+                    @Html.Hidden("id", item.id, new { @class = "control-label" })
+                    <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                }
+            </div>
+    </div>
+    }
+</div>

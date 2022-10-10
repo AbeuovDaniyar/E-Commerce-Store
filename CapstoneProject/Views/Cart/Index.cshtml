@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CapstoneProject.Models.Item>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Image
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Product Price
+            </th>
+            <th>
+                Product Quantity
+            </th>
+            <th>
+                Delete
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.cart)
+        {
+            <tr>
+                <td>
+                    <img src="/src/images/product_@(item.Product.id).png" width="60" height="60" />
+                </td>
+                <td>
+                    @item.Product.productName
+                </td>
+                <td>
+                    $@item.Product.productPrice
+                </td>
+                <td>
+                    @using (Html.BeginForm("UpdateCart", "cart", FormMethod.Post))
+                    {
+                        @Html.TextBox("quantity", (int)item.Quantity, new { @class = "control-label" })
+                        @Html.Hidden("id", (int)item.Product.id, new { @class = "control-label" })                       
+                        <input type="submit" value="Update" />
+                    }
+                </td>
+                <td align="center">
+                    @Html.ActionLink("Delete", "RemoveProduct", new { id = item.Product.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3 style="text-align: right">@ViewBag.total</h3>
+
+
+<form action="/create-checkout-session" method="POST">
+    <button type="submit" id="checkout-button">Checkout</button>
+</form>
