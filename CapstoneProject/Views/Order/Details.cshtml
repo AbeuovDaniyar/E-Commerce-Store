@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CapstoneProject.Models.OrderItem>
+
+<table class="table table-striped table-dark mt-4">
+    <thead>
+        <tr>
+            <th>
+                Order #
+            </th>
+            <th>
+                Product
+            </th>
+            <th></th>
+            <th>
+                Product Price 
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                SubTotal
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderId)
+            </td>
+            <td>
+                <a href="@Url.Action("ProductDetails","Product",new { productId = item.productId })">
+                    <img src="/src/images/product_@(item.productId).png" width="50" height="50">
+                </a>
+            </td>
+            <td>
+                <p>@item.product.productName</p>
+            </td>
+            <td>
+                <p>$@item.product.productPrice</p>
+            </td>
+            <td>
+                <p>@item.quantity</p>
+            </td>
+            <td>
+                <p>$@item.subtotal</p>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

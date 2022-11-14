@@ -39,25 +39,5 @@ namespace CapstoneProject.Models
             this.productId = productId;
             this.productManufacturerLink = productManufacturerLink;
         }
-
-        /*
-        public Supplements(int id, string productName, string productManufacturer, string productDescription, string productImagePath, float productPrice, int productStock, int supplementId, string productExpirationDate, string productCode, string productUPCCode, int productPckgQuantity, float productShippingWeight, string productDimensions, string productKeyWords, string productSuggestedUse, string productIngridients, string productWarnings, string productDisclaimer, int productId, string productManufacturerLink) 
-            : base(id, productName, productManufacturer, productDescription, productImagePath, productPrice, productStock)
-        {
-            this.supplementId = supplementId;
-            this.productExpirationDate = productExpirationDate;
-            this.productCode = productCode;
-            this.productUPCCode = productUPCCode;
-            this.productPckgQuantity = productPckgQuantity;
-            this.productShippingWeight = productShippingWeight;
-            this.productDimensions = productDimensions;
-            this.productKeyWords = productKeyWords;
-            this.productSuggestedUse = productSuggestedUse;
-            this.productIngridients = productIngridients;
-            this.productWarnings = productWarnings;
-            this.productDisclaimer = productDisclaimer;
-            this.productId = productId;
-            this.productManufacturerLink = productManufacturerLink;
-        }*/
     }
 }

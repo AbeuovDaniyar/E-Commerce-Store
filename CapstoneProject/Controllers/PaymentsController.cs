@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CapstoneProject.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace CapstoneProject.Controllers
 {
@@ -21,7 +23,6 @@ namespace CapstoneProject.Controllers
         }
         public IActionResult Success()
         {
-
             return View();
         }
 
@@ -32,10 +33,14 @@ namespace CapstoneProject.Controllers
         }
 
 
+        /// <summary>
+        /// API post request to Stripe API to create a checkout-session
+        /// </summary>
+        /// <returns>SuccessUrl or CancelUrl</returns>
         [HttpPost]
         public ActionResult Create()
         {
-            var domain = "http://localhost:44379/Payments";
+            var domain = "https://localhost:44379/";
             List<Item> cart = Helper.Session.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
 
             List<SessionLineItemOptions> LineItemOptions = new List<SessionLineItemOptions>();
@@ -45,12 +50,13 @@ namespace CapstoneProject.Controllers
                 LineItemOptions.Add(currentLineItem);
             }
 
+
             var options = new SessionCreateOptions
             {
                 LineItems = LineItemOptions,
                 Mode = "payment",
-                SuccessUrl = domain + "/success.cshtml",
-                CancelUrl = domain + "/cancel.cshtml",
+                SuccessUrl = domain + "Order/Index",
+                CancelUrl = domain + "Payments/cancel",
             };
             var service = new SessionService();
             Stripe.Checkout.Session session = service.Create(options);

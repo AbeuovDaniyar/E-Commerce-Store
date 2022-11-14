@@ -84,7 +84,6 @@ li.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #f6f6f6;
 }
 
 .menu-items {
@@ -106,19 +105,18 @@ li.active {
     padding: 2px;
     padding-left: 15px;
     padding-right: 15px;
-    background: #f8f9f9
 }
 
 .title-price {
     margin-top: 30px;
     margin-bottom: 0;
-    color: black
+    color: white
 }
 
 .title-attr {
     margin-top: 0;
     margin-bottom: 0;
-    color: black;
+    color: white;
 }
 
 .btn-minus {

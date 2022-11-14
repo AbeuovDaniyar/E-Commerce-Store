@@ -1,26 +1,37 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 
 <ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
-}
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
-}
+    @if (string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("userId")))
+    {
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Login">Login</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                User
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">                
+                <a class="dropdown-item" asp-controller="Order" asp-action="ViewOrders">Orders</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Logout">Logout</a>
+        </li>
+        @if (string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("cart")))
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Cart" asp-action="EmptyCart">Cart</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Cart" asp-action="Index">Cart</a>
+            </li>
+        }
+    }
 </ul>

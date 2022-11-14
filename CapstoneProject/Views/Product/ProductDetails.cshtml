@@ -1,45 +1,35 @@
 ﻿@using CapstoneProject;
 
 @model Tuple<Product, Supplements>
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <div class="col-sm item-photo">
             <img src="/src/images/product_@(Model.Item1.id).png" width="400" height="400"/>
         </div>
-        <div class="col-sm" style="border:0px solid gray">
-            <!-- Datos del vendedor y titulo del producto -->
+        <div class="col-sm">
             <h3>@Model.Item1.productName</h3>
             <div class="section" style="padding-bottom:20px;">
-                <h5 style="color:#337ab7">Manufactured By <a href="@Model.Item2.productManufacturerLink" target="_blank">@Model.Item1.productManufacturer</a> · <small style="color:#337ab7"></small></h5>
+                <h5 style="color:#337ab7">Manufactured By <a href="@Model.Item2.productManufacturerLink" target="_blank">@Model.Item1.productManufacturer</a></h5>
 
-                <!-- Precios -->
-                <h6 class="title-price"><small>Price</small></h6>
-                <h3 style="margin-top:0px;">@Html.DisplayFor(o => Model.Item1.productPrice)</h3>
+                <h6 class="title-price"><small>Price</small> $@Model.Item1.productPrice</h6>
 
                 <ul>
-                    <li>Best By: @Model.Item2.productExpirationDate</li>
-                    <li>Shipping Weight: @Model.Item2.productShippingWeight kg</li>
-                    <li>Product Code: @Model.Item2.productCode</li>
-                    <li>UPC Code: @Model.Item2.productUPCCode</li>
-                    <li>Package Quantity: @Model.Item2.productPckgQuantity count</li>
-                    <li>Dimensions: @Model.Item2.productDimensions</li>
+                    <li>Best By:  @Model.Item2.productExpirationDate</li>
+                    <li>Shipping Weight:  @Model.Item2.productShippingWeight kg</li>
+                    <li>Product Code:  @Model.Item2.productCode</li>
+                    <li>UPC Code:  @Model.Item2.productUPCCode</li>
+                    <li>Package Quantity:  @Model.Item2.productPckgQuantity count</li>
+                    <li>Dimensions:  @Model.Item2.productDimensions</li>
                 </ul>
-                <!--
-        <h6 class="title-attr"><small>Quantity</small></h6>
-        <div>
-            <div class="btn-minus"><span style="font-size: 15px">-</span></div>
-            <input value="1" />
-            <div class="btn-plus"><span style="font-size: 15px">+</span></div>
-        </div>-->
             </div>
             @using (Html.BeginForm("AddToCart", "cart", FormMethod.Post))
             {
                 <h6 class="title-attr"><small>Quantity</small></h6>
-                @Html.TextBox("quantity", 1, new { @class = "control-label", @value = "1" })
-
+                @Html.TextBox("quantity", 1, new { @class = "form-control w-25", @value = "1", })
+                <br/>
                 @Html.Hidden("id", (int)Model.Item1.id, new { @class = "control-label" })
-                <div class="section" style="padding-bottom:20px;">
-                    <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart </button>
+                <div class="section" style="padding-bottom:20px; text-align: right;">
+                    <button class="btn btn-primary"> Add to Cart </button>
                 </div>
             }
             </div>

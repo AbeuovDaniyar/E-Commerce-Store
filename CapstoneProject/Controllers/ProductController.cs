@@ -13,11 +13,21 @@ namespace CapstoneProject.Controllers
     public class ProductController : Controller
     {
         ProductService service = new ProductService();
+
+        /// <summary>
+        /// Shows product list
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             return View(service.getAllProducts());
         }
 
+        /// <summary>
+        /// Shows product details 
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns>ProductDetails.cshtml</returns>
         public IActionResult ProductDetails(int productId)
         {
             var tupleModel = new Tuple<Product, Supplements>(service.GetProductById(productId), service.GetSupplementByProductId(productId));
