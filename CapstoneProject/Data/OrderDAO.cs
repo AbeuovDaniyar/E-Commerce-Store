@@ -2,7 +2,9 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CapstoneProject.Data
@@ -97,6 +99,38 @@ namespace CapstoneProject.Data
             }
 
             return orderItems;
+        }
+
+        public DataTable getOrderItemsByOrderIdDataTable(int orderId)
+        {
+            DataTable dataTable = new DataTable();
+
+            string sqlStatement = "SELECT * FROM dbo.OrderItem WHERE orderId = @id";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sqlStatement, connection);
+                command.CommandType = CommandType.TableDirect;
+
+                command.Parameters.AddWithValue("@id", orderId);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            return dataTable;
         }
 
         /// <summary>

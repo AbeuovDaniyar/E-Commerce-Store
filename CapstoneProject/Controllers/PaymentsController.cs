@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CapstoneProject.Services;
 using Microsoft.AspNetCore.Http;
+using System.Net.Mail;
 
 namespace CapstoneProject.Controllers
 {
@@ -16,6 +17,7 @@ namespace CapstoneProject.Controllers
     [ApiController]
     public class PaymentsController : Controller
     {
+
         public IActionResult Index()
         {
 
