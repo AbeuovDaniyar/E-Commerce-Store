@@ -97,6 +97,11 @@ namespace CapstoneProject.Controllers
             return result;
         }
 
+        /// <summary>
+        /// Sends SMTP request to google servers to send an email
+        /// </summary>
+        /// <param name="orderItems"></param>
+        /// <param name="orderId"></param>
         public void SendMail(List<OrderItem> orderItems, int orderId)
         {
             MailMessage msg = new MailMessage();
@@ -120,6 +125,13 @@ namespace CapstoneProject.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates html table and fills cells with order item information
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="columns"></param>
+        /// <returns></returns>
         public static string GetMyTable<T>(IEnumerable<T> list, params Func<T, object>[] columns)
         {
 
@@ -146,14 +158,6 @@ namespace CapstoneProject.Controllers
                     sb.Append("</tr>");
                 }
             sb.Append("</table>");
-
-            /*
-            foreach (var item in list)
-            {
-                //todo this should actually make an HTML table, not just get the properties requested
-                foreach (var column in columns)
-                    sb.Append(column(item));
-            }*/
             return sb.ToString();
         }
     }
