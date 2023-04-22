@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-CapstoneProject-96D9AAD4-C520-424C-AF81-4A8C2D540CE1</UserSecretsId>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>bin\Debug\Docs.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,9 @@
-﻿using CapstoneProject.Models;
+﻿/* The above code is a C# class that defines a data access object (DAO) for handling orders and order
+items in a database. It includes methods for retrieving orders and order items by user ID or order
+ID, creating new orders and order items, and retrieving order items as a DataTable. The class uses a
+connection string to connect to a Microsoft SQL Server database and includes error handling for
+database operations. */
+using CapstoneProject.Models;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,17 +14,20 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Data
 {
+    /* The OrderDAO class contains methods for retrieving and creating orders and order items in a
+    database. */
     public class OrderDAO
     {
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-CapstoneProject-96D9AAD4-C520-424C-AF81-4A8C2D540CE1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         ProductDAO service = new ProductDAO();
 
-        /// <summary>
-        /// Retrieves All Orders by userId from the database table
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <returns>List<OrderModel></returns>
+        
+        /// This function retrieves a list of orders for a specific user from a database.
+        /// 
+        /// @param userId The ID of the user whose orders are being retrieved.
+        /// 
+        /// @return A list of OrderModel objects for a specific user ID.
         public List<OrderModel> getOrders(int userId) 
         {
             List<OrderModel> orders = new List<OrderModel>();
@@ -57,11 +65,13 @@ namespace CapstoneProject.Data
             return orders;
         }
 
-        /// <summary>
-        /// Retrieve Order Items by orderId from the database table
-        /// </summary>
-        /// <param name="orderId"></param>
-        /// <returns>List<OrderItem></returns>
+        
+        /// This function retrieves a list of order items based on a given order ID from a SQL database.
+        /// 
+        /// @param orderId The ID of the order for which we want to retrieve the order items.
+        /// 
+        /// @return The method is returning a list of OrderItem objects that belong to a specific order
+        /// ID.
         public List<OrderItem> getOrderItemsByOrderId(int orderId) 
         {
             List<OrderItem> orderItems = new List<OrderItem>();
@@ -101,6 +111,12 @@ namespace CapstoneProject.Data
             return orderItems;
         }
 
+        /// This function retrieves a DataTable of order items based on a given order ID.
+        /// 
+        /// @param orderId an integer value representing the ID of the order for which we want to
+        /// retrieve the order items.
+        /// 
+        /// @return A DataTable containing the order items for a given order ID.
         public DataTable getOrderItemsByOrderIdDataTable(int orderId)
         {
             DataTable dataTable = new DataTable();
@@ -133,13 +149,17 @@ namespace CapstoneProject.Data
             return dataTable;
         }
 
-        /// <summary>
-        /// Creates a new Order entry in the database table
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <param name="orderDate"></param>
-        /// <param name="total"></param>
-        /// <returns>int</returns>
+        
+        /// The function inserts a new order into a database table and returns the ID of the inserted
+        /// row.
+        /// 
+        /// @param userId an integer representing the user ID of the customer who placed the order.
+        /// @param DateTime DateTime is a data type in C# that represents a date and time value. In this
+        /// specific method, it is used to specify the date and time when an order is placed.
+        /// @param total The total cost of the order.
+        /// 
+        /// @return The method is returning an integer value, which is the ID of the newly inserted
+        /// order in the database.
         public int newOrder(int userId, DateTime orderDate, float total) 
         {
             int result = 0;
@@ -172,11 +192,13 @@ namespace CapstoneProject.Data
             return result;
         }
 
-        /// <summary>
-        /// Creates a new Order Item entry in the database table
-        /// </summary>
-        /// <param name="orderItem"></param>
-        /// <returns>int</returns>
+        
+        /// This function inserts a new order item into a database table.
+        /// 
+        /// @param OrderItem An object representing an order item, with properties for orderId,
+        /// productId, quantity, and subtotal.
+        /// 
+        /// @return The method is returning an integer value, which is either -1 or 1.
         public int newOrderItems(OrderItem orderItem) 
         {
             int result = -1;

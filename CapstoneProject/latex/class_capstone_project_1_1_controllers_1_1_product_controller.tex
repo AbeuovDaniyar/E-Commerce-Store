@@ -1,0 +1,50 @@
+\hypertarget{class_capstone_project_1_1_controllers_1_1_product_controller}{}\doxysection{Capstone\+Project.\+Controllers.\+Product\+Controller Class Reference}
+\label{class_capstone_project_1_1_controllers_1_1_product_controller}\index{CapstoneProject.Controllers.ProductController@{CapstoneProject.Controllers.ProductController}}
+Inheritance diagram for Capstone\+Project.\+Controllers.\+Product\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_capstone_project_1_1_controllers_1_1_product_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_product_controller_a6e2fc31eb7634b3e674f3dd3203ad8d6}{Index}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_product_controller_a38272be00969f5baeb2a0ae4c1606e70}{Product\+Details}} (int product\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_product_controller_a6e2fc31eb7634b3e674f3dd3203ad8d6}\label{class_capstone_project_1_1_controllers_1_1_product_controller_a6e2fc31eb7634b3e674f3dd3203ad8d6}} 
+\index{CapstoneProject.Controllers.ProductController@{CapstoneProject.Controllers.ProductController}!Index@{Index}}
+\index{Index@{Index}!CapstoneProject.Controllers.ProductController@{CapstoneProject.Controllers.ProductController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Product\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns a view with all the products retrieved from a service.
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily Index} action method is returning a view with all the products retrieved from the {\ttfamily get\+All\+Products} method of the {\ttfamily service} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_product_controller_a38272be00969f5baeb2a0ae4c1606e70}\label{class_capstone_project_1_1_controllers_1_1_product_controller_a38272be00969f5baeb2a0ae4c1606e70}} 
+\index{CapstoneProject.Controllers.ProductController@{CapstoneProject.Controllers.ProductController}!ProductDetails@{ProductDetails}}
+\index{ProductDetails@{ProductDetails}!CapstoneProject.Controllers.ProductController@{CapstoneProject.Controllers.ProductController}}
+\doxysubsubsection{\texorpdfstring{ProductDetails()}{ProductDetails()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Product\+Controller.\+Product\+Details (\begin{DoxyParamCaption}\item[{int}]{product\+Id }\end{DoxyParamCaption})}
+
+The function returns a view with a tuple model containing a product and its supplements based on the given product ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Id} & an integer representing the unique identifier of a product. This parameter is used to retrieve information about a specific product and its associated supplements from a service. The retrieved data is then passed to a view for display.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a view with a tuple model containing a Product object and a Supplements object retrieved from the service based on the provided product\+Id. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_product_controller_8cs}{Product\+Controller.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\hypertarget{class_capstone_project_1_1_data_1_1_product_d_a_o}{}\doxysection{Capstone\+Project.\+Data.\+Product\+DAO Class Reference}
+\label{class_capstone_project_1_1_data_1_1_product_d_a_o}\index{CapstoneProject.Data.ProductDAO@{CapstoneProject.Data.ProductDAO}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} $>$ \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_product_d_a_o_a5ffb4f94593fe25e0ea371114cbb5ecf}{get\+All\+Products}} ()
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_product_d_a_o_ad0aa78fef95195bb486121388cea262c}{Get\+Product\+By\+Id}} (int product\+Id)
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_supplements}{Supplements}} \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_product_d_a_o_a6a4a00a0352d4d47e014c3c762ca4389}{Get\+Supplement\+By\+Product\+Id}} (int product\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_product_d_a_o_a5ffb4f94593fe25e0ea371114cbb5ecf}\label{class_capstone_project_1_1_data_1_1_product_d_a_o_a5ffb4f94593fe25e0ea371114cbb5ecf}} 
+\index{CapstoneProject.Data.ProductDAO@{CapstoneProject.Data.ProductDAO}!getAllProducts@{getAllProducts}}
+\index{getAllProducts@{getAllProducts}!CapstoneProject.Data.ProductDAO@{CapstoneProject.Data.ProductDAO}}
+\doxysubsubsection{\texorpdfstring{getAllProducts()}{getAllProducts()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} $>$ Capstone\+Project.\+Data.\+Product\+DAO.\+get\+All\+Products (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This C\# function retrieves all products from a database and returns them as a list of Product objects.
+
+\begin{DoxyReturn}{Returns}
+A list of all products from the database table \char`\"{}\+Product\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_product_d_a_o_ad0aa78fef95195bb486121388cea262c}\label{class_capstone_project_1_1_data_1_1_product_d_a_o_ad0aa78fef95195bb486121388cea262c}} 
+\index{CapstoneProject.Data.ProductDAO@{CapstoneProject.Data.ProductDAO}!GetProductById@{GetProductById}}
+\index{GetProductById@{GetProductById}!CapstoneProject.Data.ProductDAO@{CapstoneProject.Data.ProductDAO}}
+\doxysubsubsection{\texorpdfstring{GetProductById()}{GetProductById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} Capstone\+Project.\+Data.\+Product\+DAO.\+Get\+Product\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{product\+Id }\end{DoxyParamCaption})}
+
+This C\# function retrieves a product from a database by its ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Id} & an integer representing the ID of the product to be retrieved from the database.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a single instance of the {\ttfamily Product} class that matches the given {\ttfamily product\+Id}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_product_d_a_o_a6a4a00a0352d4d47e014c3c762ca4389}\label{class_capstone_project_1_1_data_1_1_product_d_a_o_a6a4a00a0352d4d47e014c3c762ca4389}} 
+\index{CapstoneProject.Data.ProductDAO@{CapstoneProject.Data.ProductDAO}!GetSupplementByProductId@{GetSupplementByProductId}}
+\index{GetSupplementByProductId@{GetSupplementByProductId}!CapstoneProject.Data.ProductDAO@{CapstoneProject.Data.ProductDAO}}
+\doxysubsubsection{\texorpdfstring{GetSupplementByProductId()}{GetSupplementByProductId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_supplements}{Supplements}} Capstone\+Project.\+Data.\+Product\+DAO.\+Get\+Supplement\+By\+Product\+Id (\begin{DoxyParamCaption}\item[{int}]{product\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a supplement product from a database based on its product ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Id} & an integer representing the ID of the product for which we want to retrieve the supplement information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a single instance of the Supplements class that matches the provided product\+Id. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Data/\mbox{\hyperlink{_product_d_a_o_8cs}{Product\+DAO.\+cs}}\end{DoxyCompactItemize}

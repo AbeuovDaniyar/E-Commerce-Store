@@ -1,0 +1,69 @@
+\hypertarget{class_capstone_project_1_1_services_1_1_user_service}{}\doxysection{Capstone\+Project.\+Services.\+User\+Service Class Reference}
+\label{class_capstone_project_1_1_services_1_1_user_service}\index{CapstoneProject.Services.UserService@{CapstoneProject.Services.UserService}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_user_service_a156bd4dc3b303373b16ffab841a0be77}{insert\+User}} (\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} user)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_user_service_a8fff72336955d5e2b6d1b8ed12c1d6dc}{authenticate\+User}} (string email, string password)
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_user_service_a612b2d7c5bc12b29bd6898fd171f5d47}{get\+User\+By\+Id}} (int user\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_user_service_a8fff72336955d5e2b6d1b8ed12c1d6dc}\label{class_capstone_project_1_1_services_1_1_user_service_a8fff72336955d5e2b6d1b8ed12c1d6dc}} 
+\index{CapstoneProject.Services.UserService@{CapstoneProject.Services.UserService}!authenticateUser@{authenticateUser}}
+\index{authenticateUser@{authenticateUser}!CapstoneProject.Services.UserService@{CapstoneProject.Services.UserService}}
+\doxysubsubsection{\texorpdfstring{authenticateUser()}{authenticateUser()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Services.\+User\+Service.\+authenticate\+User (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+This function authenticates a user by taking in their email and password and returning an integer value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & A string representing the email address of the user trying to authenticate. \\
+\hline
+{\em password} & The password parameter is a string that represents the user\textquotesingle{}s password that they are trying to authenticate with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method {\ttfamily authenticate\+User} is returning an integer value, which is the result of calling the {\ttfamily authenticate\+User} method of the {\ttfamily service} object with the {\ttfamily email} and {\ttfamily password} parameters. The specific meaning of the returned integer value depends on the implementation of the {\ttfamily authenticate\+User} method in the {\ttfamily service} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_user_service_a612b2d7c5bc12b29bd6898fd171f5d47}\label{class_capstone_project_1_1_services_1_1_user_service_a612b2d7c5bc12b29bd6898fd171f5d47}} 
+\index{CapstoneProject.Services.UserService@{CapstoneProject.Services.UserService}!getUserById@{getUserById}}
+\index{getUserById@{getUserById}!CapstoneProject.Services.UserService@{CapstoneProject.Services.UserService}}
+\doxysubsubsection{\texorpdfstring{getUserById()}{getUserById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} Capstone\+Project.\+Services.\+User\+Service.\+get\+User\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{user\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a user object by its ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & The parameter \char`\"{}user\+Id\char`\"{} is an integer value representing the unique identifier of a user. This method is used to retrieve a user object from the service layer based on the provided user\+Id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A User object is being returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_user_service_a156bd4dc3b303373b16ffab841a0be77}\label{class_capstone_project_1_1_services_1_1_user_service_a156bd4dc3b303373b16ffab841a0be77}} 
+\index{CapstoneProject.Services.UserService@{CapstoneProject.Services.UserService}!insertUser@{insertUser}}
+\index{insertUser@{insertUser}!CapstoneProject.Services.UserService@{CapstoneProject.Services.UserService}}
+\doxysubsubsection{\texorpdfstring{insertUser()}{insertUser()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Services.\+User\+Service.\+insert\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+This function inserts a user into a database using a service and returns the result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em User} & User is a class representing a user in the system. It likely contains properties such as username, password, email, and other relevant information about the user. The insert\+User method takes an instance of the User class as a parameter and inserts it into the system, returning an integer value indicating the success or\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method {\ttfamily insert\+User} is being called on an object of type {\ttfamily service} with the argument {\ttfamily user}. The return value of this method is being returned by the {\ttfamily insert\+User} method in the current class. Therefore, the return value of this method is whatever is returned by the {\ttfamily insert\+User} method in the {\ttfamily service} object. The return type of this method is not specified in 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Services/\mbox{\hyperlink{_user_service_8cs}{User\+Service.\+cs}}\end{DoxyCompactItemize}

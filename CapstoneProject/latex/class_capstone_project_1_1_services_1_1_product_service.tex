@@ -1,0 +1,62 @@
+\hypertarget{class_capstone_project_1_1_services_1_1_product_service}{}\doxysection{Capstone\+Project.\+Services.\+Product\+Service Class Reference}
+\label{class_capstone_project_1_1_services_1_1_product_service}\index{CapstoneProject.Services.ProductService@{CapstoneProject.Services.ProductService}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} $>$ \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_product_service_a70329799e9b2e8d2b8913cca186e62eb}{get\+All\+Products}} ()
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_product_service_aeea78d460d7d0d17515d88f5db313e19}{Get\+Product\+By\+Id}} (int product\+Id)
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_supplements}{Supplements}} \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_product_service_a07a451c1d96144f9057b8f42f7cc5d6e}{Get\+Supplement\+By\+Product\+Id}} (int product\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_product_service_a70329799e9b2e8d2b8913cca186e62eb}\label{class_capstone_project_1_1_services_1_1_product_service_a70329799e9b2e8d2b8913cca186e62eb}} 
+\index{CapstoneProject.Services.ProductService@{CapstoneProject.Services.ProductService}!getAllProducts@{getAllProducts}}
+\index{getAllProducts@{getAllProducts}!CapstoneProject.Services.ProductService@{CapstoneProject.Services.ProductService}}
+\doxysubsubsection{\texorpdfstring{getAllProducts()}{getAllProducts()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} $>$ Capstone\+Project.\+Services.\+Product\+Service.\+get\+All\+Products (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns a list of all products using a DAO service.
+
+\begin{DoxyReturn}{Returns}
+A list of all products from the DAO service. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_product_service_aeea78d460d7d0d17515d88f5db313e19}\label{class_capstone_project_1_1_services_1_1_product_service_aeea78d460d7d0d17515d88f5db313e19}} 
+\index{CapstoneProject.Services.ProductService@{CapstoneProject.Services.ProductService}!GetProductById@{GetProductById}}
+\index{GetProductById@{GetProductById}!CapstoneProject.Services.ProductService@{CapstoneProject.Services.ProductService}}
+\doxysubsubsection{\texorpdfstring{GetProductById()}{GetProductById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_product}{Product}} Capstone\+Project.\+Services.\+Product\+Service.\+Get\+Product\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{product\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a product from the database by its ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Id} & an integer value representing the unique identifier of a product that needs to be retrieved from the data source.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A product object with the specified product\+Id is being returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_product_service_a07a451c1d96144f9057b8f42f7cc5d6e}\label{class_capstone_project_1_1_services_1_1_product_service_a07a451c1d96144f9057b8f42f7cc5d6e}} 
+\index{CapstoneProject.Services.ProductService@{CapstoneProject.Services.ProductService}!GetSupplementByProductId@{GetSupplementByProductId}}
+\index{GetSupplementByProductId@{GetSupplementByProductId}!CapstoneProject.Services.ProductService@{CapstoneProject.Services.ProductService}}
+\doxysubsubsection{\texorpdfstring{GetSupplementByProductId()}{GetSupplementByProductId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_supplements}{Supplements}} Capstone\+Project.\+Services.\+Product\+Service.\+Get\+Supplement\+By\+Product\+Id (\begin{DoxyParamCaption}\item[{int}]{product\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a supplement by its product ID using a DAO service.
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Id} & an integer value representing the unique identifier of a product for which the corresponding supplement needs to be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method {\ttfamily Get\+Supplement\+By\+Product\+Id} is returning an object of type {\ttfamily Supplements}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Services/\mbox{\hyperlink{_product_service_8cs}{Product\+Service.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\hypertarget{class_capstone_project_1_1_services_1_1_order_service}{}\doxysection{Capstone\+Project.\+Services.\+Order\+Service Class Reference}
+\label{class_capstone_project_1_1_services_1_1_order_service}\index{CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_model}{Order\+Model}} $>$ \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_order_service_a9047bd4a692d654cf794c74bd8011c79}{get\+Orders}} (int user\+Id)
+\item 
+List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_order_service_a56e3a9ba71e53fa946e4ee8cb7f5a1e2}{get\+Order\+Items\+By\+Order\+Id}} (int order\+Id)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_order_service_a66e2a674d2de51185d633ea1391a22db}{new\+Order}} (int user\+Id, Date\+Time order\+Date, float total)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_services_1_1_order_service_a74d43848138b7511f23b0e59e4805c41}{new\+Order\+Items}} (\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} order\+Item)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_order_service_a56e3a9ba71e53fa946e4ee8cb7f5a1e2}\label{class_capstone_project_1_1_services_1_1_order_service_a56e3a9ba71e53fa946e4ee8cb7f5a1e2}} 
+\index{CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}!getOrderItemsByOrderId@{getOrderItemsByOrderId}}
+\index{getOrderItemsByOrderId@{getOrderItemsByOrderId}!CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{getOrderItemsByOrderId()}{getOrderItemsByOrderId()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} $>$ Capstone\+Project.\+Services.\+Order\+Service.\+get\+Order\+Items\+By\+Order\+Id (\begin{DoxyParamCaption}\item[{int}]{order\+Id }\end{DoxyParamCaption})}
+
+This function returns a list of order items based on the provided order ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The parameter \char`\"{}order\+Id\char`\"{} is an integer value that represents the unique identifier of an order. This method retrieves a list of order items associated with the specified order ID.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of Order\+Item objects that belong to the order with the specified order\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_order_service_a9047bd4a692d654cf794c74bd8011c79}\label{class_capstone_project_1_1_services_1_1_order_service_a9047bd4a692d654cf794c74bd8011c79}} 
+\index{CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}!getOrders@{getOrders}}
+\index{getOrders@{getOrders}!CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{getOrders()}{getOrders()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_model}{Order\+Model}} $>$ Capstone\+Project.\+Services.\+Order\+Service.\+get\+Orders (\begin{DoxyParamCaption}\item[{int}]{user\+Id }\end{DoxyParamCaption})}
+
+This function returns a list of order models for a given user ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & The ID of the user for whom the orders are being retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A List of Order\+Model objects is being returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_order_service_a66e2a674d2de51185d633ea1391a22db}\label{class_capstone_project_1_1_services_1_1_order_service_a66e2a674d2de51185d633ea1391a22db}} 
+\index{CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}!newOrder@{newOrder}}
+\index{newOrder@{newOrder}!CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{newOrder()}{newOrder()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Services.\+Order\+Service.\+new\+Order (\begin{DoxyParamCaption}\item[{int}]{user\+Id,  }\item[{Date\+Time}]{order\+Date,  }\item[{float}]{total }\end{DoxyParamCaption})}
+
+This function creates a new order with the given user ID, order date, and total cost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & an integer representing the unique identifier of the user who placed the order. \\
+\hline
+{\em Date\+Time} & Date\+Time is a data type in C\# that represents a date and time value. It can be used to store and manipulate dates and times in various formats. In the given code snippet, the Date\+Time parameter is used to specify the date and time of the order. \\
+\hline
+{\em total} & The total cost of the order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning an integer value, which is the result of calling the {\ttfamily new\+Order} method of the {\ttfamily service} object with the provided parameters {\ttfamily user\+Id}, {\ttfamily order\+Date}, and {\ttfamily total}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_services_1_1_order_service_a74d43848138b7511f23b0e59e4805c41}\label{class_capstone_project_1_1_services_1_1_order_service_a74d43848138b7511f23b0e59e4805c41}} 
+\index{CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}!newOrderItems@{newOrderItems}}
+\index{newOrderItems@{newOrderItems}!CapstoneProject.Services.OrderService@{CapstoneProject.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{newOrderItems()}{newOrderItems()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Services.\+Order\+Service.\+new\+Order\+Items (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}}}]{order\+Item }\end{DoxyParamCaption})}
+
+This function adds a new order item to the service.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Order\+Item} & Order\+Item is an object that represents an item in an order. It may contain information such as the product name, quantity, price, and any other relevant details about the item being ordered. The method new\+Order\+Items takes an Order\+Item object as a parameter and adds it to the order. The return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method {\ttfamily new\+Order\+Items} is returning an integer value, which is the result of calling the {\ttfamily new\+Order\+Items} method of the {\ttfamily service} object with the {\ttfamily order\+Item} parameter. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Services/\mbox{\hyperlink{_order_service_8cs}{Order\+Service.\+cs}}\end{DoxyCompactItemize}

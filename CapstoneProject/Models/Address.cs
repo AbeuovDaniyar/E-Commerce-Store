@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Models
 {
+    /* The class "Address" contains properties for storing information about a user's address. */
     public class Address
     {
         public int Id { get; set; }

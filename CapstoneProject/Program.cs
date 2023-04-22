@@ -1,3 +1,7 @@
+/* This is the main program file for a C# ASP.NET Core web application. It includes several using
+statements to import necessary libraries and namespaces, and defines a Program class with a Main
+method that creates a host builder and runs the application. The CreateHostBuilder method configures
+the web host and sets up the Startup class to handle requests. */
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

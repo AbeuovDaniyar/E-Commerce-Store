@@ -1,4 +1,7 @@
-﻿using CapstoneProject.Helper;
+﻿/* This is a C# code for a controller class named `HomeController` in a web application. It includes
+several methods that handle HTTP requests and responses for different views such as `Index`,
+`Login`, `Logout`, `Authenticate`, `Register`, `ProcessRegister`, `Privacy`, and `Error`. */
+using CapstoneProject.Helper;
 using CapstoneProject.Models;
 using CapstoneProject.Services;
 using Microsoft.AspNetCore.Http;
@@ -12,37 +15,38 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Controllers
 {
+    /* The HomeController class contains methods for user authentication, registration, and session
+    management in a C# web application. */
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ISession userSession;
         UserService service = new UserService();
 
-        /// <summary>
-        /// Constructor that initializes logger, and userSession variables
-        /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="httpContextAccessor"></param>
+        
+        /* This is the constructor method for the `HomeController` class. It takes in two parameters:
+        `ILogger<HomeController> logger` and `IHttpContextAccessor httpContextAccessor`. */
         public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
             this.userSession = httpContextAccessor.HttpContext.Session;
         }
 
-        /// <summary>
-        /// Index view controller method
-        /// </summary>
-        /// <returns>Index.cshtml</returns>
+        
+        /// The function returns a view for the Index page.
+        /// 
+        /// @return The `Index` action method is returning a `ViewResult` object, which represents a
+        /// view that will be rendered as the response to the client's request.
         public IActionResult Index()
         {
             return View();
         }
 
-        /// <summary>
-        /// checks if user is logged in and redirects to Login View if user is not logged in
-        /// and Index view if user is logged in
-        /// </summary>
-        /// <returns>Login.cshtml or Index.cshtml</returns>
+        
+        /// The Login function checks if a user is already logged in and returns the appropriate view.
+        /// 
+        /// @return If the "userId" value in the userSession is null or empty, the Login view is
+        /// returned. Otherwise, the Index view is returned.
         public IActionResult Login()
         {
             if (string.IsNullOrEmpty(this.userSession.GetString("userId")))
@@ -55,10 +59,10 @@ namespace CapstoneProject.Controllers
             }
         }
 
-        /// <summary>
-        /// Sets session variable for user and cart to null or empty
-        /// </summary>
-        /// <returns>Index.cshtml</returns>
+        
+        /// The function logs out the user and clears their session data.
+        /// 
+        /// @return The method is returning a View named "Index".
         public IActionResult Logout()
         {
             Session.SetSessionToNull(HttpContext.Session, "cart");
@@ -71,12 +75,15 @@ namespace CapstoneProject.Controllers
             return View("Index");
         }
 
-        /// <summary>
-        /// Authenticates user, checks if user credentials match creates user session and redirects to Index page,
-        /// otherwise redirects to Login page
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns>Index.cshtml or Login.cshtml</returns>
+        
+        /// This function authenticates a user and sets session variables if the authentication is
+        /// successful.
+        /// 
+        /// @param User The User class is a model class that represents a user in the system. It
+        /// contains properties such as Email, Password, Id, FirstName, and Role.
+        /// 
+        /// @return The method returns an IActionResult, which could be a ViewResult or a RedirectResult
+        /// depending on the conditions met in the if-else statements.
         public IActionResult Authenticate(User user)
         {
             int result = service.authenticateUser(user.Email, user.Password);
@@ -111,15 +118,25 @@ namespace CapstoneProject.Controllers
             }
         }
 
-        /// <summary>
-        /// returns Register View
-        /// </summary>
-        /// <returns>Register.cshtml</returns>
+        
+        /// This function returns a view for user registration in a C# web application.
+        /// 
+        /// @return The method is returning a View result.
         public IActionResult Register()
         {
             return View();
         }
 
+        /// The function processes user registration and returns a view for either login or registration
+        /// based on the success of inserting the user.
+        /// 
+        /// @param User The User parameter is an object that represents a user in the system. It likely
+        /// contains properties such as username, password, email, and other relevant information. The
+        /// method is using this object to register a new user in the system by passing it to a service
+        /// method called insertUser. If the user is
+        /// 
+        /// @return The method is returning a View result, either "Login" or "Register" depending on the
+        /// result of the insertUser method.
         public IActionResult ProcessRegister(User user)
         {
             if (service.insertUser(user) > -1)
@@ -133,11 +150,19 @@ namespace CapstoneProject.Controllers
 
         }
 
+        /// This function returns a view for the privacy policy.
+        /// 
+        /// @return A View result is being returned.
         public IActionResult Privacy()
         {
             return View();
         }
 
+        /// This function returns an error view with a unique request ID or trace identifier.
+        /// 
+        /// @return An IActionResult object that returns a view with an ErrorViewModel object as its
+        /// model. The ErrorViewModel object contains a RequestId property that is set to either the
+        /// current activity's Id or the HttpContext's TraceIdentifier.
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,0 +1,144 @@
+\hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller}{}\doxysection{Capstone\+Project.\+Controllers.\+Home\+Controller Class Reference}
+\label{class_capstone_project_1_1_controllers_1_1_home_controller}\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+Inheritance diagram for Capstone\+Project.\+Controllers.\+Home\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_capstone_project_1_1_controllers_1_1_home_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_a477075140db8430400131819a5042da2}{Home\+Controller}} (ILogger$<$ \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller}{Home\+Controller}} $>$ logger, IHttp\+Context\+Accessor http\+Context\+Accessor)
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_aee69bdb46d15f9838d1a7c5fbb26b0c1}{Index}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_af985621d43eb4e8c98afb52124d5c073}{Login}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_ae72a9c00bbbbd6857e5c986ee001e6ed}{Logout}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_a06ac289d261d363034cf4d0770589678}{Authenticate}} (\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} user)
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_aea152405c1290bc94c8317651a85e2cd}{Register}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_a336f3ee167607643b3b68b890a6bd98c}{Process\+Register}} (\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} user)
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_aca798e546afb370cd649ef99a7a3449a}{Privacy}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller_abb578878c41c10000402561e49a57a25}{Error}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_a477075140db8430400131819a5042da2}\label{class_capstone_project_1_1_controllers_1_1_home_controller_a477075140db8430400131819a5042da2}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!HomeController@{HomeController}}
+\index{HomeController@{HomeController}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{HomeController()}{HomeController()}}
+{\footnotesize\ttfamily Capstone\+Project.\+Controllers.\+Home\+Controller.\+Home\+Controller (\begin{DoxyParamCaption}\item[{ILogger$<$ \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_home_controller}{Home\+Controller}} $>$}]{logger,  }\item[{IHttp\+Context\+Accessor}]{http\+Context\+Accessor }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_a06ac289d261d363034cf4d0770589678}\label{class_capstone_project_1_1_controllers_1_1_home_controller_a06ac289d261d363034cf4d0770589678}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!Authenticate@{Authenticate}}
+\index{Authenticate@{Authenticate}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Authenticate()}{Authenticate()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Authenticate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+This function authenticates a user and sets session variables if the authentication is successful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em User} & The User class is a model class that represents a user in the system. It contains properties such as Email, Password, Id, First\+Name, and Role.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method returns an IAction\+Result, which could be a View\+Result or a Redirect\+Result depending on the conditions met in the if-\/else statements. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_abb578878c41c10000402561e49a57a25}\label{class_capstone_project_1_1_controllers_1_1_home_controller_abb578878c41c10000402561e49a57a25}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!Error@{Error}}
+\index{Error@{Error}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns an error view with a unique request ID or trace identifier.
+
+\begin{DoxyReturn}{Returns}
+An IAction\+Result object that returns a view with an Error\+View\+Model object as its model. The Error\+View\+Model object contains a Request\+Id property that is set to either the current activity\textquotesingle{}s Id or the Http\+Context\textquotesingle{}s Trace\+Identifier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_aee69bdb46d15f9838d1a7c5fbb26b0c1}\label{class_capstone_project_1_1_controllers_1_1_home_controller_aee69bdb46d15f9838d1a7c5fbb26b0c1}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!Index@{Index}}
+\index{Index@{Index}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The function returns a view for the Index page.
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily Index} action method is returning a {\ttfamily View\+Result} object, which represents a view that will be rendered as the response to the client\textquotesingle{}s request. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_af985621d43eb4e8c98afb52124d5c073}\label{class_capstone_project_1_1_controllers_1_1_home_controller_af985621d43eb4e8c98afb52124d5c073}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!Login@{Login}}
+\index{Login@{Login}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The Login function checks if a user is already logged in and returns the appropriate view.
+
+\begin{DoxyReturn}{Returns}
+If the \char`\"{}user\+Id\char`\"{} value in the user\+Session is null or empty, the Login view is returned. Otherwise, the Index view is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_ae72a9c00bbbbd6857e5c986ee001e6ed}\label{class_capstone_project_1_1_controllers_1_1_home_controller_ae72a9c00bbbbd6857e5c986ee001e6ed}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!Logout@{Logout}}
+\index{Logout@{Logout}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Logout()}{Logout()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The function logs out the user and clears their session data.
+
+\begin{DoxyReturn}{Returns}
+The method is returning a View named \char`\"{}\+Index\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_aca798e546afb370cd649ef99a7a3449a}\label{class_capstone_project_1_1_controllers_1_1_home_controller_aca798e546afb370cd649ef99a7a3449a}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!Privacy@{Privacy}}
+\index{Privacy@{Privacy}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Privacy()}{Privacy()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Privacy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns a view for the privacy policy.
+
+\begin{DoxyReturn}{Returns}
+A View result is being returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_a336f3ee167607643b3b68b890a6bd98c}\label{class_capstone_project_1_1_controllers_1_1_home_controller_a336f3ee167607643b3b68b890a6bd98c}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!ProcessRegister@{ProcessRegister}}
+\index{ProcessRegister@{ProcessRegister}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{ProcessRegister()}{ProcessRegister()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Process\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+The function processes user registration and returns a view for either login or registration based on the success of inserting the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em User} & The User parameter is an object that represents a user in the system. It likely contains properties such as username, password, email, and other relevant information. The method is using this object to register a new user in the system by passing it to a service method called insert\+User. If the user is\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a View result, either \char`\"{}\+Login\char`\"{} or \char`\"{}\+Register\char`\"{} depending on the result of the insert\+User method. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_home_controller_aea152405c1290bc94c8317651a85e2cd}\label{class_capstone_project_1_1_controllers_1_1_home_controller_aea152405c1290bc94c8317651a85e2cd}} 
+\index{CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}!Register@{Register}}
+\index{Register@{Register}!CapstoneProject.Controllers.HomeController@{CapstoneProject.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Home\+Controller.\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns a view for user registration in a C\# web application.
+
+\begin{DoxyReturn}{Returns}
+The method is returning a View result. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_home_controller_8cs}{Home\+Controller.\+cs}}\end{DoxyCompactItemize}

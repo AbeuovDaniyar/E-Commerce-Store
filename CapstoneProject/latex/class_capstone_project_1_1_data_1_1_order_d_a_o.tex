@@ -1,0 +1,107 @@
+\hypertarget{class_capstone_project_1_1_data_1_1_order_d_a_o}{}\doxysection{Capstone\+Project.\+Data.\+Order\+DAO Class Reference}
+\label{class_capstone_project_1_1_data_1_1_order_d_a_o}\index{CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_model}{Order\+Model}} $>$ \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_order_d_a_o_a7db45887bd46967c346c9afb86638493}{get\+Orders}} (int user\+Id)
+\item 
+List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} $>$ \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_order_d_a_o_af0cc950fa70a8edef4e71d9e88076afe}{get\+Order\+Items\+By\+Order\+Id}} (int order\+Id)
+\item 
+Data\+Table \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_order_d_a_o_a7a42c0b13259f15bb13dbc6dc0f969c8}{get\+Order\+Items\+By\+Order\+Id\+Data\+Table}} (int order\+Id)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_order_d_a_o_a6819e30a34e8b4a84e1ca06d32190208}{new\+Order}} (int user\+Id, Date\+Time order\+Date, float total)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_order_d_a_o_a0b7cd955c3c34ae0bb28d2b651a71ccb}{new\+Order\+Items}} (\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} order\+Item)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_order_d_a_o_af0cc950fa70a8edef4e71d9e88076afe}\label{class_capstone_project_1_1_data_1_1_order_d_a_o_af0cc950fa70a8edef4e71d9e88076afe}} 
+\index{CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}!getOrderItemsByOrderId@{getOrderItemsByOrderId}}
+\index{getOrderItemsByOrderId@{getOrderItemsByOrderId}!CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}}
+\doxysubsubsection{\texorpdfstring{getOrderItemsByOrderId()}{getOrderItemsByOrderId()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} $>$ Capstone\+Project.\+Data.\+Order\+DAO.\+get\+Order\+Items\+By\+Order\+Id (\begin{DoxyParamCaption}\item[{int}]{order\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a list of order items based on a given order ID from a SQL database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The ID of the order for which we want to retrieve the order items.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a list of Order\+Item objects that belong to a specific order ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_order_d_a_o_a7a42c0b13259f15bb13dbc6dc0f969c8}\label{class_capstone_project_1_1_data_1_1_order_d_a_o_a7a42c0b13259f15bb13dbc6dc0f969c8}} 
+\index{CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}!getOrderItemsByOrderIdDataTable@{getOrderItemsByOrderIdDataTable}}
+\index{getOrderItemsByOrderIdDataTable@{getOrderItemsByOrderIdDataTable}!CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}}
+\doxysubsubsection{\texorpdfstring{getOrderItemsByOrderIdDataTable()}{getOrderItemsByOrderIdDataTable()}}
+{\footnotesize\ttfamily Data\+Table Capstone\+Project.\+Data.\+Order\+DAO.\+get\+Order\+Items\+By\+Order\+Id\+Data\+Table (\begin{DoxyParamCaption}\item[{int}]{order\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a Data\+Table of order items based on a given order ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & an integer value representing the ID of the order for which we want to retrieve the order items.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Data\+Table containing the order items for a given order ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_order_d_a_o_a7db45887bd46967c346c9afb86638493}\label{class_capstone_project_1_1_data_1_1_order_d_a_o_a7db45887bd46967c346c9afb86638493}} 
+\index{CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}!getOrders@{getOrders}}
+\index{getOrders@{getOrders}!CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}}
+\doxysubsubsection{\texorpdfstring{getOrders()}{getOrders()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_model}{Order\+Model}} $>$ Capstone\+Project.\+Data.\+Order\+DAO.\+get\+Orders (\begin{DoxyParamCaption}\item[{int}]{user\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a list of orders for a specific user from a database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & The ID of the user whose orders are being retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of Order\+Model objects for a specific user ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_order_d_a_o_a6819e30a34e8b4a84e1ca06d32190208}\label{class_capstone_project_1_1_data_1_1_order_d_a_o_a6819e30a34e8b4a84e1ca06d32190208}} 
+\index{CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}!newOrder@{newOrder}}
+\index{newOrder@{newOrder}!CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}}
+\doxysubsubsection{\texorpdfstring{newOrder()}{newOrder()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Data.\+Order\+DAO.\+new\+Order (\begin{DoxyParamCaption}\item[{int}]{user\+Id,  }\item[{Date\+Time}]{order\+Date,  }\item[{float}]{total }\end{DoxyParamCaption})}
+
+The function inserts a new order into a database table and returns the ID of the inserted row.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & an integer representing the user ID of the customer who placed the order. \\
+\hline
+{\em Date\+Time} & Date\+Time is a data type in C\# that represents a date and time value. In this specific method, it is used to specify the date and time when an order is placed. \\
+\hline
+{\em total} & The total cost of the order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning an integer value, which is the ID of the newly inserted order in the database. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_order_d_a_o_a0b7cd955c3c34ae0bb28d2b651a71ccb}\label{class_capstone_project_1_1_data_1_1_order_d_a_o_a0b7cd955c3c34ae0bb28d2b651a71ccb}} 
+\index{CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}!newOrderItems@{newOrderItems}}
+\index{newOrderItems@{newOrderItems}!CapstoneProject.Data.OrderDAO@{CapstoneProject.Data.OrderDAO}}
+\doxysubsubsection{\texorpdfstring{newOrderItems()}{newOrderItems()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Data.\+Order\+DAO.\+new\+Order\+Items (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}}}]{order\+Item }\end{DoxyParamCaption})}
+
+This function inserts a new order item into a database table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Order\+Item} & An object representing an order item, with properties for order\+Id, product\+Id, quantity, and subtotal.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning an integer value, which is either -\/1 or 1. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Data/\mbox{\hyperlink{_order_d_a_o_8cs}{Order\+DAO.\+cs}}\end{DoxyCompactItemize}

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Models
 {
+    
+    /* The class OrderItem contains properties related to an order item, including its ID, order ID,
+    product ID, quantity, subtotal, and associated product. */
     public class OrderItem
     {
         public int Id { get; set; }

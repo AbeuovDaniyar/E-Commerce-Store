@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Models
 {
+    
+    /* The class "User" contains properties for a user's ID, first name, last name, email, password,
+    and role. */
     public class User
     {
         public int Id { get; set; }

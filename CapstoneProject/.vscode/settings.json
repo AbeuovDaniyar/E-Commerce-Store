@@ -1,0 +1,5 @@
+{
+    "docwriter.style": "Doxygen",
+    "docwriter.progress.trackMethods": false,
+    "docwriter.progress.trackFunctions": false
+}

@@ -1,4 +1,9 @@
-﻿using CapstoneProject.Models;
+﻿/* The above code is a C# controller for managing orders in a web application. It includes methods for
+creating a new order, viewing orders, and viewing order details. It also includes a method for
+sending an email to the user with the details of their order using SMTP. The controller uses a
+service class to interact with the database and retrieve order information. The code also includes a
+helper method for creating an HTML table to display order item information in the email. */
+using CapstoneProject.Models;
 using CapstoneProject.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,24 +17,30 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Controllers
 {
+    /* The OrderController class handles the processing of new orders, displaying order information,
+    and sending confirmation emails to users. */
     public class OrderController : Controller
     {
         OrderService orderService = new OrderService();
         private readonly ISession userSession;
 
-        /// <summary>
-        /// Constructor that initializes userSession variable
-        /// </summary>
-        /// <param name="httpContextAccessor"></param>
+        
+        /* This is the constructor for the `OrderController` class that takes an `IHttpContextAccessor`
+        object as a parameter. It sets the `userSession` field to the current session of the
+        `HttpContextAccessor` object. This allows the controller to access and manipulate session
+        data for the current user. */
         public OrderController(IHttpContextAccessor httpContextAccessor)
         {
             this.userSession = httpContextAccessor.HttpContext.Session;
         }
 
-        /// <summary>
-        /// creates a new order and returns a list of orders
-        /// </summary>
-        /// <returns>Order/Index.cshtml</returns>
+        
+        /// The function returns a view of orders if a new order is processed successfully, otherwise it
+        /// returns an empty view.
+        /// 
+        /// @return If the result of the `ProcessNewOrder()` method is greater than -1, the method will
+        /// return a view of the orders for the user with the ID stored in the `userSession` object.
+        /// Otherwise, it will return an empty view.
         public IActionResult Index()
         {
             if (ProcessNewOrder() > -1)
@@ -43,30 +54,39 @@ namespace CapstoneProject.Controllers
             
         }
 
-        /// <summary>
-        /// Shows order list
-        /// </summary>
-        /// <returns>Index.cshtml</returns>
+        
+        /// This function returns a view of orders for a specific user.
+        /// 
+        /// @return An IActionResult object is being returned, which will render a view named "Index"
+        /// and pass the result of the getOrders method of the orderService object as a parameter. The
+        /// getOrders method takes an integer parameter representing the user ID and returns a list of
+        /// orders.
         public IActionResult ViewOrders() 
         {
             return View("Index", orderService.getOrders(Convert.ToInt32(this.userSession.GetString("userId"))));
         }
 
-        /// <summary>
-        /// Shows order item details
-        /// </summary>
-        /// <param name="orderId"></param>
-        /// <returns>Details.cshtml</returns>
+        
+        /// This function returns a view of order items based on the given order ID.
+        /// 
+        /// @param orderId The parameter "orderId" is an integer value that represents the unique
+        /// identifier of an order. This method is used to retrieve the details of an order by passing
+        /// its orderId as a parameter. The method calls the getOrderItemsByOrderId method of the
+        /// orderService object and returns the result to the view.
+        /// 
+        /// @return The method is returning a view with the order items for a specific order ID.
         public IActionResult Details(int orderId) 
         {
 
             return View(orderService.getOrderItemsByOrderId(orderId));
         }
 
-        /// <summary>
-        /// Helper method to add new order
-        /// </summary>
-        /// <returns>int</returns>
+        
+        /// The function processes a new order by calculating the total price, creating a new order and
+        /// order items, and sending a confirmation email.
+        /// 
+        /// @return The method is returning an integer value, which is either -1 or 1 depending on
+        /// whether the order items were successfully added to the database.
         public int ProcessNewOrder()
         {
             int result = -1;
@@ -97,11 +117,12 @@ namespace CapstoneProject.Controllers
             return result;
         }
 
-        /// <summary>
-        /// Sends SMTP request to google servers to send an email
-        /// </summary>
-        /// <param name="orderItems"></param>
-        /// <param name="orderId"></param>
+        
+        /// This function sends an email to the user containing a table of their order items and order
+        /// ID.
+        /// 
+        /// @param orderItems A list of OrderItem objects representing the items in the order.
+        /// @param orderId The unique identifier for the order being sent in the email.
         public void SendMail(List<OrderItem> orderItems, int orderId)
         {
             MailMessage msg = new MailMessage();
@@ -125,13 +146,15 @@ namespace CapstoneProject.Controllers
             }
         }
 
-        /// <summary>
-        /// Creates html table and fills cells with order item information
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="list"></param>
-        /// <param name="columns"></param>
-        /// <returns></returns>
+        
+        /// The function generates an HTML table with specified columns for a given list of objects.
+        /// 
+        /// @param list An IEnumerable collection of objects of type T, which represents the data to be
+        /// displayed in the table.
+        /// 
+        /// @return A string containing an HTML table with the specified columns and data from the
+        /// provided list. The table includes a header row with column names and a message at the
+        /// beginning.
         public static string GetMyTable<T>(IEnumerable<T> list, params Func<T, object>[] columns)
         {
 

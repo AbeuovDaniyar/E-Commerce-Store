@@ -1,4 +1,13 @@
-﻿using CapstoneProject.Helper;
+﻿/* This is a C# code for a controller named `CartController` in a web application. It imports necessary
+namespaces and defines the controller class that inherits from the `Controller` class. It also
+defines a constructor that sets the `userSession` variable to the current context session using the
+`IHttpContextAccessor` interface. The controller has several action methods that handle cart-related
+functionalities such as adding items to cart, updating cart items, and removing items from cart. It
+also has a private method named `isExist` that checks if an item already exists in the cart. The
+controller uses a `ProductService` class to retrieve product information and a `Session` object to
+store and retrieve cart information. The views associated with the controller are not shown in this
+code. */
+using CapstoneProject.Helper;
 using CapstoneProject.Models;
 using CapstoneProject.Services;
 using Microsoft.AspNetCore.Http;
@@ -10,23 +19,28 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Controllers
 {
+    /* The `CartController` class manages the user's shopping cart by adding, updating, and removing
+    products from the cart, and displaying the cart and total price. */
     public class CartController : Controller
     {
         ProductService service = new ProductService();
         private readonly ISession userSession;
 
-        /// <summary>
-        /// Cart Controller sets userSession variable to current Context Session
-        /// </summary>
-        /// <param name="httpContextAccessor"></param>
+        /* This is a constructor for the `CartController` class that takes an `IHttpContextAccessor`
+        object as a parameter. It sets the `userSession` variable to the current session of the
+        `HttpContextAccessor` object. This allows the controller to access and manipulate session
+        data for the current user. */
         public CartController(IHttpContextAccessor httpContextAccessor)
         {
             this.userSession = httpContextAccessor.HttpContext.Session;
         }
-        /// <summary>
-        /// Index method initializes cart
-        /// </summary>
-        /// <returns>View(Index.cshtml)</returns>
+
+
+        /// This function retrieves the cart items from the session, calculates the total price of the items,
+        /// and returns the view with the cart and total price as viewbag variables.
+        /// 
+        /// @return The method is returning a View with the ViewBag containing the cart and total price of the
+        /// items in the cart.
         public IActionResult Index()
         {
             var cart = Session.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
@@ -35,21 +49,23 @@ namespace CapstoneProject.Controllers
             return View();
         }
 
-        /// <summary>
-        /// Returns View for Empty Cart
-        /// </summary>
-        /// <returns>View(EmptyCart.cshtml)</returns>
+        /// This function returns an empty view for the cart.
+        /// 
+        /// @return A view is being returned.
         public IActionResult EmptyCart() 
         {
             return View();
         }
 
-        /// <summary>
-        /// Adds a new item to cart
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="quantity"></param>
-        /// <returns>Login View if user is not logged in, or Cart Index View after adding an item to cart</returns>
+
+        /// The function adds a product to the user's cart and redirects to the index page.
+        /// 
+        /// @param id The ID of the product being added to the cart.
+        /// @param quantity The quantity parameter is an integer that represents the number of items the
+        /// user wants to add to their cart.
+        /// 
+        /// @return The method is returning an IActionResult object. The specific action being returned
+        /// is a RedirectToAction to the "Index" action.
         public IActionResult AddToCart(int id, int quantity) 
         {
             if (string.IsNullOrEmpty(userSession.GetString("userId")))
@@ -82,12 +98,16 @@ namespace CapstoneProject.Controllers
             return RedirectToAction("Index");
         }
 
-        /// <summary>
-        /// Updates cart item values
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="quantity"></param>
-        /// <returns>Cart Index View</returns>
+
+        /// This function updates the quantity of a product in the user's shopping cart.
+        /// 
+        /// @param id The id parameter is an integer that represents the unique identifier of a product
+        /// in the shopping cart.
+        /// @param quantity The quantity parameter represents the new quantity of a product that the
+        /// user wants to update in their shopping cart.
+        /// 
+        /// @return The method is returning an IActionResult object, which is a result of redirecting to
+        /// the "Index" action.
         public IActionResult UpdateCart(int id, int quantity) 
         {
             List<Item> cart = Session.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");           
@@ -101,6 +121,13 @@ namespace CapstoneProject.Controllers
             return RedirectToAction("Index");
         }
 
+        /// This function removes a product from a shopping cart stored in a session object in ASP.NET
+        /// Core.
+        /// 
+        /// @param id an integer representing the ID of the product to be removed from the cart.
+        /// 
+        /// @return The method is returning a `RedirectToAction` result, which redirects the user to the
+        /// "Index" action method.
         public IActionResult RemoveProduct(int id)
         {
             List<Item> cart = Session.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
@@ -110,6 +137,14 @@ namespace CapstoneProject.Controllers
             return RedirectToAction("Index");
         }
 
+        /// The function checks if an item with a given ID exists in a shopping cart stored in a session
+        /// object and returns its index if found.
+        /// 
+        /// @param id an integer representing the ID of a product that needs to be checked if it exists
+        /// in the shopping cart.
+        /// 
+        /// @return The method `isExist` returns an integer value which represents the index of the item
+        /// in the cart list if it exists, otherwise it returns -1.
         private int isExist(int id)
         {
             List<Item> cart = Session.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");

@@ -1,0 +1,82 @@
+\hypertarget{class_capstone_project_1_1_data_1_1_user_d_a_o}{}\doxysection{Capstone\+Project.\+Data.\+User\+DAO Class Reference}
+\label{class_capstone_project_1_1_data_1_1_user_d_a_o}\index{CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} $>$ \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_user_d_a_o_aca6d222bdff8127041cb7ac947616a82}{get\+All\+Users}} ()
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_user_d_a_o_a7c863338391ab099546a4804cf28f0e4}{get\+User\+By\+Id}} (int user\+Id)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_user_d_a_o_aefb9b51fa269605a0f338019ea621c01}{insert\+User}} (\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} user)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_data_1_1_user_d_a_o_acd2a127772ac30af6e26e8844625cc81}{authenticate\+User}} (string email, string password)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_user_d_a_o_acd2a127772ac30af6e26e8844625cc81}\label{class_capstone_project_1_1_data_1_1_user_d_a_o_acd2a127772ac30af6e26e8844625cc81}} 
+\index{CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}!authenticateUser@{authenticateUser}}
+\index{authenticateUser@{authenticateUser}!CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}}
+\doxysubsubsection{\texorpdfstring{authenticateUser()}{authenticateUser()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Data.\+User\+DAO.\+authenticate\+User (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+This function authenticates a user by checking if their email and password match those stored in a SQL database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & The email of the user trying to authenticate. \\
+\hline
+{\em password} & The password parameter is a string variable that represents the password entered by the user during the authentication process.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning an integer value, which represents the user ID of the authenticated user. If the authentication fails, the method returns -\/1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_user_d_a_o_aca6d222bdff8127041cb7ac947616a82}\label{class_capstone_project_1_1_data_1_1_user_d_a_o_aca6d222bdff8127041cb7ac947616a82}} 
+\index{CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}}
+\doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} $>$ Capstone\+Project.\+Data.\+User\+DAO.\+get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The function returns a null list of users.
+
+\begin{DoxyReturn}{Returns}
+A null value is being returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_user_d_a_o_a7c863338391ab099546a4804cf28f0e4}\label{class_capstone_project_1_1_data_1_1_user_d_a_o_a7c863338391ab099546a4804cf28f0e4}} 
+\index{CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}!getUserById@{getUserById}}
+\index{getUserById@{getUserById}!CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}}
+\doxysubsubsection{\texorpdfstring{getUserById()}{getUserById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}} Capstone\+Project.\+Data.\+User\+DAO.\+get\+User\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{user\+Id }\end{DoxyParamCaption})}
+
+This function retrieves a user from a database by their ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & an integer representing the ID of the user to retrieve from the database.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a User object with the details of the user whose Id matches the input parameter user\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_data_1_1_user_d_a_o_aefb9b51fa269605a0f338019ea621c01}\label{class_capstone_project_1_1_data_1_1_user_d_a_o_aefb9b51fa269605a0f338019ea621c01}} 
+\index{CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}!insertUser@{insertUser}}
+\index{insertUser@{insertUser}!CapstoneProject.Data.UserDAO@{CapstoneProject.Data.UserDAO}}
+\doxysubsubsection{\texorpdfstring{insertUser()}{insertUser()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Data.\+User\+DAO.\+insert\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_capstone_project_1_1_models_1_1_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+This function inserts a new user into a database and returns the ID of the inserted user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em User} & The User class is likely a custom class that represents a user in the system. It probably has properties such as First\+Name, Last\+Name, Email, Password, and Role.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning an integer value, which is the ID of the newly inserted user in the database. If the insertion is successful, the ID is returned. If there is an exception or error, the method returns -\/1. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Data/\mbox{\hyperlink{_user_d_a_o_8cs}{User\+DAO.\+cs}}\end{DoxyCompactItemize}

@@ -1,3 +1,5 @@
+/* This is the Startup class in a C# ASP.NET Core web application. It is responsible for configuring
+the application's services and middleware pipeline. */
 using CapstoneProject.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

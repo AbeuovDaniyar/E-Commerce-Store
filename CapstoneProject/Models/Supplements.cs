@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Models
 {
+
+    /* The Supplements class contains properties and a constructor for supplement products. */
     public class Supplements
     {
         public int supplementId { get; set; }
@@ -22,6 +24,10 @@ namespace CapstoneProject.Models
         public int productId { get; set; }
         public string productManufacturerLink { get; set; }
         
+        
+        /* This is a constructor for the Supplements class. It takes in 14 parameters, each
+        representing a property of a supplement product. The constructor then sets the values of
+        these properties for a specific instance of the Supplements class using the "this" keyword. */
         public Supplements(int supplementId, string productExpirationDate, string productCode, string productUPCCode, int productPckgQuantity, float productShippingWeight, string productDimensions, string productKeyWords, string productSuggestedUse, string productIngridients, string productWarnings, string productDisclaimer, int productId, string productManufacturerLink)
         {
             this.supplementId = supplementId;

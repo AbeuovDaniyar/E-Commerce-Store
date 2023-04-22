@@ -1,0 +1,114 @@
+\hypertarget{class_capstone_project_1_1_controllers_1_1_cart_controller}{}\doxysection{Capstone\+Project.\+Controllers.\+Cart\+Controller Class Reference}
+\label{class_capstone_project_1_1_controllers_1_1_cart_controller}\index{CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}}
+Inheritance diagram for Capstone\+Project.\+Controllers.\+Cart\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_capstone_project_1_1_controllers_1_1_cart_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_cart_controller_af2ca1c97a5e0581241d040e40d683e29}{Cart\+Controller}} (IHttp\+Context\+Accessor http\+Context\+Accessor)
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_cart_controller_ad5f4fcab866e4919b9d341cd9f044d28}{Index}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_cart_controller_a51303c55047554e3a3866bdcf258ddc6}{Empty\+Cart}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_cart_controller_a252a796776af19310230d1baa4d706de}{Add\+To\+Cart}} (int id, int quantity)
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_cart_controller_aa74ce830b4c8d404a04e7e534f36b378}{Update\+Cart}} (int id, int quantity)
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_cart_controller_af7e88049c8b72b762d6c2669174d4a86}{Remove\+Product}} (int id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_cart_controller_af2ca1c97a5e0581241d040e40d683e29}\label{class_capstone_project_1_1_controllers_1_1_cart_controller_af2ca1c97a5e0581241d040e40d683e29}} 
+\index{CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}!CartController@{CartController}}
+\index{CartController@{CartController}!CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}}
+\doxysubsubsection{\texorpdfstring{CartController()}{CartController()}}
+{\footnotesize\ttfamily Capstone\+Project.\+Controllers.\+Cart\+Controller.\+Cart\+Controller (\begin{DoxyParamCaption}\item[{IHttp\+Context\+Accessor}]{http\+Context\+Accessor }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_cart_controller_a252a796776af19310230d1baa4d706de}\label{class_capstone_project_1_1_controllers_1_1_cart_controller_a252a796776af19310230d1baa4d706de}} 
+\index{CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}!AddToCart@{AddToCart}}
+\index{AddToCart@{AddToCart}!CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}}
+\doxysubsubsection{\texorpdfstring{AddToCart()}{AddToCart()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Cart\+Controller.\+Add\+To\+Cart (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{quantity }\end{DoxyParamCaption})}
+
+The function adds a product to the user\textquotesingle{}s cart and redirects to the index page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the product being added to the cart. \\
+\hline
+{\em quantity} & The quantity parameter is an integer that represents the number of items the user wants to add to their cart.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning an IAction\+Result object. The specific action being returned is a Redirect\+To\+Action to the \char`\"{}\+Index\char`\"{} action. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_cart_controller_a51303c55047554e3a3866bdcf258ddc6}\label{class_capstone_project_1_1_controllers_1_1_cart_controller_a51303c55047554e3a3866bdcf258ddc6}} 
+\index{CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}!EmptyCart@{EmptyCart}}
+\index{EmptyCart@{EmptyCart}!CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}}
+\doxysubsubsection{\texorpdfstring{EmptyCart()}{EmptyCart()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Cart\+Controller.\+Empty\+Cart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns an empty view for the cart.
+
+\begin{DoxyReturn}{Returns}
+A view is being returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_cart_controller_ad5f4fcab866e4919b9d341cd9f044d28}\label{class_capstone_project_1_1_controllers_1_1_cart_controller_ad5f4fcab866e4919b9d341cd9f044d28}} 
+\index{CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}!Index@{Index}}
+\index{Index@{Index}!CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Cart\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function retrieves the cart items from the session, calculates the total price of the items, and returns the view with the cart and total price as viewbag variables.
+
+\begin{DoxyReturn}{Returns}
+The method is returning a View with the View\+Bag containing the cart and total price of the items in the cart. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_cart_controller_af7e88049c8b72b762d6c2669174d4a86}\label{class_capstone_project_1_1_controllers_1_1_cart_controller_af7e88049c8b72b762d6c2669174d4a86}} 
+\index{CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}!RemoveProduct@{RemoveProduct}}
+\index{RemoveProduct@{RemoveProduct}!CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}}
+\doxysubsubsection{\texorpdfstring{RemoveProduct()}{RemoveProduct()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Cart\+Controller.\+Remove\+Product (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+This function removes a product from a shopping cart stored in a session object in ASP.\+NET Core.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & an integer representing the ID of the product to be removed from the cart.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a {\ttfamily Redirect\+To\+Action} result, which redirects the user to the \char`\"{}\+Index\char`\"{} action method. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_cart_controller_aa74ce830b4c8d404a04e7e534f36b378}\label{class_capstone_project_1_1_controllers_1_1_cart_controller_aa74ce830b4c8d404a04e7e534f36b378}} 
+\index{CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}!UpdateCart@{UpdateCart}}
+\index{UpdateCart@{UpdateCart}!CapstoneProject.Controllers.CartController@{CapstoneProject.Controllers.CartController}}
+\doxysubsubsection{\texorpdfstring{UpdateCart()}{UpdateCart()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Cart\+Controller.\+Update\+Cart (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{quantity }\end{DoxyParamCaption})}
+
+This function updates the quantity of a product in the user\textquotesingle{}s shopping cart.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id parameter is an integer that represents the unique identifier of a product in the shopping cart. \\
+\hline
+{\em quantity} & The quantity parameter represents the new quantity of a product that the user wants to update in their shopping cart.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning an IAction\+Result object, which is a result of redirecting to the \char`\"{}\+Index\char`\"{} action. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_cart_controller_8cs}{Cart\+Controller.\+cs}}\end{DoxyCompactItemize}

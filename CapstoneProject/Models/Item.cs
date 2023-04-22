@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Models
 {
+
+    /* The class "Item" represents a product and its quantity, with a property for the product and its
+    ID. */
     public class Item
     {
         public Product Product { get; set; }

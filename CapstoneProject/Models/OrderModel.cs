@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapstoneProject.Models
 {
+    
+    /* The OrderModel class represents an order with an ID, user ID, order date, total cost, and a list
+    of products. */
     public class OrderModel
     {
         public int Id { get; set; }

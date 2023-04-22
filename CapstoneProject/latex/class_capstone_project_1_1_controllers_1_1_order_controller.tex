@@ -1,0 +1,125 @@
+\hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller}{}\doxysection{Capstone\+Project.\+Controllers.\+Order\+Controller Class Reference}
+\label{class_capstone_project_1_1_controllers_1_1_order_controller}\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+Inheritance diagram for Capstone\+Project.\+Controllers.\+Order\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_capstone_project_1_1_controllers_1_1_order_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_order_controller_aa76e0bf00461ae287a2001d08fe89523}{Order\+Controller}} (IHttp\+Context\+Accessor http\+Context\+Accessor)
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_order_controller_a4a63cb34e41ed80fef94c3cf2766017c}{Index}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_order_controller_aa461bf66cc0e258d1e57b8a522e810bc}{View\+Orders}} ()
+\item 
+IAction\+Result \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_order_controller_a6c9770842e390e0991ca23688c41f7fa}{Details}} (int order\+Id)
+\item 
+int \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_order_controller_a4009e138e7d8c064ecdc308196232d59}{Process\+New\+Order}} ()
+\item 
+void \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_order_controller_a4a5b9425f4a2bc58c1e743f3c3fcb1bd}{Send\+Mail}} (List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} $>$ order\+Items, int order\+Id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_capstone_project_1_1_controllers_1_1_order_controller_ae88c68f727b251f0a1338da3ea8cc98a}{Get\+My\+Table$<$ T $>$}} (IEnumerable$<$ T $>$ list, params Func$<$ T, object $>$\mbox{[}$\,$\mbox{]} columns)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller_aa76e0bf00461ae287a2001d08fe89523}\label{class_capstone_project_1_1_controllers_1_1_order_controller_aa76e0bf00461ae287a2001d08fe89523}} 
+\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}!OrderController@{OrderController}}
+\index{OrderController@{OrderController}!CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{OrderController()}{OrderController()}}
+{\footnotesize\ttfamily Capstone\+Project.\+Controllers.\+Order\+Controller.\+Order\+Controller (\begin{DoxyParamCaption}\item[{IHttp\+Context\+Accessor}]{http\+Context\+Accessor }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller_a6c9770842e390e0991ca23688c41f7fa}\label{class_capstone_project_1_1_controllers_1_1_order_controller_a6c9770842e390e0991ca23688c41f7fa}} 
+\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}!Details@{Details}}
+\index{Details@{Details}!CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Order\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int}]{order\+Id }\end{DoxyParamCaption})}
+
+This function returns a view of order items based on the given order ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The parameter \char`\"{}order\+Id\char`\"{} is an integer value that represents the unique identifier of an order. This method is used to retrieve the details of an order by passing its order\+Id as a parameter. The method calls the get\+Order\+Items\+By\+Order\+Id method of the order\+Service object and returns the result to the view.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The method is returning a view with the order items for a specific order ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller_ae88c68f727b251f0a1338da3ea8cc98a}\label{class_capstone_project_1_1_controllers_1_1_order_controller_ae88c68f727b251f0a1338da3ea8cc98a}} 
+\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}!GetMyTable$<$ T $>$@{GetMyTable$<$ T $>$}}
+\index{GetMyTable$<$ T $>$@{GetMyTable$<$ T $>$}!CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{GetMyTable$<$ T $>$()}{GetMyTable< T >()}}
+{\footnotesize\ttfamily static string Capstone\+Project.\+Controllers.\+Order\+Controller.\+Get\+My\+Table$<$ T $>$ (\begin{DoxyParamCaption}\item[{IEnumerable$<$ T $>$}]{list,  }\item[{params Func$<$ T, object $>$\mbox{[}$\,$\mbox{]}}]{columns }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+The function generates an HTML table with specified columns for a given list of objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & An IEnumerable collection of objects of type T, which represents the data to be displayed in the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing an HTML table with the specified columns and data from the provided list. The table includes a header row with column names and a message at the beginning. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller_a4a63cb34e41ed80fef94c3cf2766017c}\label{class_capstone_project_1_1_controllers_1_1_order_controller_a4a63cb34e41ed80fef94c3cf2766017c}} 
+\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}!Index@{Index}}
+\index{Index@{Index}!CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Order\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The function returns a view of orders if a new order is processed successfully, otherwise it returns an empty view.
+
+\begin{DoxyReturn}{Returns}
+If the result of the {\ttfamily Process\+New\+Order()} method is greater than -\/1, the method will return a view of the orders for the user with the ID stored in the {\ttfamily user\+Session} object. Otherwise, it will return an empty view. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller_a4009e138e7d8c064ecdc308196232d59}\label{class_capstone_project_1_1_controllers_1_1_order_controller_a4009e138e7d8c064ecdc308196232d59}} 
+\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}!ProcessNewOrder@{ProcessNewOrder}}
+\index{ProcessNewOrder@{ProcessNewOrder}!CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{ProcessNewOrder()}{ProcessNewOrder()}}
+{\footnotesize\ttfamily int Capstone\+Project.\+Controllers.\+Order\+Controller.\+Process\+New\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The function processes a new order by calculating the total price, creating a new order and order items, and sending a confirmation email.
+
+\begin{DoxyReturn}{Returns}
+The method is returning an integer value, which is either -\/1 or 1 depending on whether the order items were successfully added to the database. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller_a4a5b9425f4a2bc58c1e743f3c3fcb1bd}\label{class_capstone_project_1_1_controllers_1_1_order_controller_a4a5b9425f4a2bc58c1e743f3c3fcb1bd}} 
+\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}!SendMail@{SendMail}}
+\index{SendMail@{SendMail}!CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{SendMail()}{SendMail()}}
+{\footnotesize\ttfamily void Capstone\+Project.\+Controllers.\+Order\+Controller.\+Send\+Mail (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_capstone_project_1_1_models_1_1_order_item}{Order\+Item}} $>$}]{order\+Items,  }\item[{int}]{order\+Id }\end{DoxyParamCaption})}
+
+This function sends an email to the user containing a table of their order items and order ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Items} & A list of Order\+Item objects representing the items in the order. \\
+\hline
+{\em order\+Id} & The unique identifier for the order being sent in the email. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_capstone_project_1_1_controllers_1_1_order_controller_aa461bf66cc0e258d1e57b8a522e810bc}\label{class_capstone_project_1_1_controllers_1_1_order_controller_aa461bf66cc0e258d1e57b8a522e810bc}} 
+\index{CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}!ViewOrders@{ViewOrders}}
+\index{ViewOrders@{ViewOrders}!CapstoneProject.Controllers.OrderController@{CapstoneProject.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{ViewOrders()}{ViewOrders()}}
+{\footnotesize\ttfamily IAction\+Result Capstone\+Project.\+Controllers.\+Order\+Controller.\+View\+Orders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns a view of orders for a specific user.
+
+\begin{DoxyReturn}{Returns}
+An IAction\+Result object is being returned, which will render a view named \char`\"{}\+Index\char`\"{} and pass the result of the get\+Orders method of the order\+Service object as a parameter. The get\+Orders method takes an integer parameter representing the user ID and returns a list of orders. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_order_controller_8cs}{Order\+Controller.\+cs}}\end{DoxyCompactItemize}
